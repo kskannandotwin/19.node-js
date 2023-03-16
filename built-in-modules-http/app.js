@@ -8,10 +8,41 @@ const port = 3000;
 // hostname: IP which is associated with any device connected to a computer network
 const hostname = "127.0.0.1"; // localhost
 
+const cars = [
+  {
+    make: "Audi",
+    model: "A3",
+    year: "2015",
+    price: 10000,
+    transmission: "Automatic",
+    url: `https://images.pexels.com/photos/2394/lights-clouds-dark-car.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940`,
+  },
+  {
+    make: "Mercedes",
+    model: "B Class",
+    year: "2018",
+    price: 20000,
+    transmission: "Manual",
+    url: `https://images.pexels.com/photos/120049/pexels-photo-120049.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940`,
+  },
+  {
+    make: "Ford",
+    model: "Focus",
+    year: "2018",
+    price: 13000,
+    transmission: "Manual",
+    url: `https://images.pexels.com/photos/1007410/pexels-photo-1007410.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940`,
+  },
+];
+
 // callback function to be executed when a user makes a request to our server
 const respond = (request, response) => {
   if (request.url !== "/favicon.ico") {
     console.log(request.url);
+    const query = url.parse(request.url, true).query;
+    console.log(query);
+    const pathname = url.parse(request.url, true).pathname;
+    console.log(pathname);
   }
   // response.setHeader(header name, value)
   response.setHeader("Content-Type", "text/plain");
@@ -27,6 +58,10 @@ const respond = (request, response) => {
   </head>
   <body>`);
   response.write(`<p>Node is fun!</p>`);
+  if (pathname === "/cars") {
+    car.filter().forEach();
+    // make, model, year, transmission, minprice, maxprice
+  }
   response.end(`</body>
       </html>`);
 };
