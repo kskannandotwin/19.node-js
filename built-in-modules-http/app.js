@@ -59,7 +59,7 @@ const respond = (request, response) => {
   <body>`);
   response.write(`<p>Node is fun!</p>`);
   if (pathname === "/cars") {
-    car.filter().forEach();
+    cars.filter().forEach();
     // make, model, year, transmission, minprice, maxprice
   }
   response.end(`</body>
