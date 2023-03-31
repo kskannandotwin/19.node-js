@@ -1,2 +1,2 @@
-I am learning node!
+I am learning Node!
 It is so fun!
