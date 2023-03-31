@@ -1,2 +1,2 @@
-Jupiter has the shortest day of all planets.
-some text.
+I am learning node!
+It is so fun!
